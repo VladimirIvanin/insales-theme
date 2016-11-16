@@ -83,7 +83,7 @@ root/
 
 Сниппеты подключаются в главный лэйаут `layouts.layout.liquid`.
 
-Пример `layouts.layout.liquid`
+Пример `layouts.layout.liquid`:
 ```liquid
 <!DOCTYPE html>
 <html>
