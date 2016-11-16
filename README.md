@@ -42,7 +42,7 @@ root/
 
 Для подключения стоит использовать внутренний функционал платформы для склеивания файлов.
 
-Для стилей нужно пользоваться директивой препроцессора sass — `@import` и внутренней директивой `#= require`
+Для стилей нужно пользоваться директивой препроцессора sass — `@import` или внутренней директивой `#= require`
 
 Пример plugins.css:
 ```
@@ -68,9 +68,26 @@ root/
 
 > main.scss компилируется в main.css, в тему подключается скомпилированный или склеенный main.scss.
 
+Подключение js происходит аналогично, только используется директива `#= require`.
+
+> Js файлы так же разделяются на два файла `plugins` и `main`.
+
+Пример main.js:
+
+```
+#= require cart
+#= require product
+#= require collection
+```
 В итоге подключение стилей и скриптов должно выглядеть так:
 
 ```
 <link rel="stylesheet" href="{{ 'plugins.css' | asset_url }}">
 <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+<script type="text/javascript" src="{{ 'plugins.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'main.js' | asset_url }}"></script>
+
+```
+
+
 ```
