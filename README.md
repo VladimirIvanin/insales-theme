@@ -1,6 +1,9 @@
 # insales-theme
 Рекомендации по структуре проекта темы на платформе InSales
 
+- [Особенности шаблонов на InSales](https://github.com/VladimirIvanin/insales-theme#Особенности-шаблонов-на-insales)
+- [Подключение стилей и скриптов](https://github.com/VladimirIvanin/insales-theme#Подключение-стилей-и-скриптов)
+
 ## Особенности шаблонов на InSales
 
 Структура папок:
