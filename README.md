@@ -37,3 +37,30 @@ root/
 - `product.new.liquid`
 - `blog.news.liquid`
 - `page.contacts.liquid `
+
+## Подключение стилей и скриптов
+
+Для подключения стоит использовать внутренний функционал платформы для склеивания файлов.
+
+Для стилей нужно пользоваться директивой препроцессора sass — `@import` и внутренней директивой `#= require`
+
+Пример plugin.css:
+```
+#= require jquery.min
+#= require magiczoomplus.min
+#= require normalize.min
+#= require swiper.min
+#= require alertify.min
+#= require magnific-popup.min
+```
+
+Пример main.scss:
+```
+@import 'header';
+@import 'footer';
+@import 'slider';
+```
+> Важно! Файлы header, footer, slider могут быть как `scss` так и `css`.
+> Используя `@import` и `#= require` можно игнорировать расширение.
+> Для удобности в файлы относящиеся к main.scss именуют с префиксом `_`, при импорте префикс игнорируется.
+
