@@ -79,15 +79,55 @@ root/
 #= require product
 #= require collection
 ```
-В итоге подключение стилей и скриптов должно выглядеть так:
+Подключение скриптов и стилей разделяется сниппетами, сниппет для стилей `styles.liquid` для скриптов `scripts.liquid`.
 
+Сниппеты подключаются в главный лэйаут `layouts.layout.liquid`.
+
+Пример `layouts.layout.liquid`
+```liquid
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  {% include 'head' %}
+
+  {% include 'styles' %}
+
+</head>
+<body class="adaptive">
+
+<div class="page-wrapper">
+
+  <div class="page-inner container">
+
+    {% include 'header' %}
+
+    {{ content_for_layout }}
+
+  </div>
+
+  {% include 'footer' %}
+
+</div>
+
+  {% include 'modals' %}
+
+  {% include 'scripts' %}
+
+</body>
+</html>
+```
+
+Содержимое styles.liquid:
 ```
 <link rel="stylesheet" href="{{ 'plugins.css' | asset_url }}">
 <link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
-<script type="text/javascript" src="{{ 'plugins.js' | asset_url }}"></script>
-<script type="text/javascript" src="{{ 'main.js' | asset_url }}"></script>
-
 ```
 
+Содержимое scripts.liquid:
+```
+<script type="text/javascript" src="{{ 'plugins.js' | asset_url }}"></script>
+<script type="text/javascript" src="{{ 'main.js' | asset_url }}"></script>
 
 ```
