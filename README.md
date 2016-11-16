@@ -44,7 +44,7 @@ root/
 
 Для стилей нужно пользоваться директивой препроцессора sass — `@import` и внутренней директивой `#= require`
 
-Пример plugin.css:
+Пример plugins.css:
 ```
 #= require jquery.min
 #= require magiczoomplus.min
@@ -61,6 +61,16 @@ root/
 @import 'slider';
 ```
 > Важно! Файлы header, footer, slider могут быть как `scss` так и `css`.
+
 > Используя `@import` и `#= require` можно игнорировать расширение.
+
 > Для удобности в файлы относящиеся к main.scss именуют с префиксом `_`, при импорте префикс игнорируется.
 
+> main.scss компилируется в main.css, в тему подключается скомпилированный или склеенный main.scss.
+
+В итоге подключение стилей и скриптов должно выглядеть так:
+
+```
+<link rel="stylesheet" href="{{ 'plugins.css' | asset_url }}">
+<link rel="stylesheet" href="{{ 'main.css' | asset_url }}">
+```
