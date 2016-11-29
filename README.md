@@ -182,3 +182,25 @@ root/
   {{ logo_text }}
 {% endif %}
 ```
+Сниппеты могут содержать в себе включение других сниппетов.
+
+Пример сниппета `header`:
+
+```liquid
+<div class="container">
+  <div class="row">
+    <div class="cell-2">
+      {% include "logo", modificator: 'in-header', use_image: true %}
+    </div>
+    <div class="cell-6">
+      {% include "menu", modificator: 'in-header', menu_class: 'main-menu', source_type: 'collection', source_handle: 'all', show_icon: true %}
+    </div>
+    <div class="cell-2">
+      {% include "search", modificator: 'in-header' %}
+    </div>
+    <div class="cell-2">
+      {% include "cart_widget", modificator: 'in-header' %}
+    </div>
+  </div>
+</div>
+```
