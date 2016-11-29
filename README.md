@@ -95,7 +95,7 @@ root/
 Сниппеты подключаются в главный лэйаут `layouts.layout.liquid`.
 
 Пример `layouts.layout.liquid`:
-```liquid
+```html
 <!DOCTYPE html>
 <html>
 
@@ -170,7 +170,7 @@ root/
 {% endif %}
 ```
 
-```Liquid
+```html
 Пример включения сниппета с передачей нескольких параметров
 {% include 'logo', use_image: false, logo_text: 'Моя компания' %}
 
