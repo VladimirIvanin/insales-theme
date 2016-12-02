@@ -208,3 +208,40 @@ root/
   </div>
 </div>
 ```
+
+## Как работать с API магазина на платформе InSales
+
+Разрабатывая сайт на платформе InSales самым важным аспектом является знание всех возможностей которые предоставляет платформа.
+
+API магазина это набор готовых контроллеров со стороны backend для работы с корзиной, получением информации о товаре, добавлением отзывов, фильтрая товаров в категории и т.д.
+
+Обращение к API может быть как через отправки форм, так и через AJAX-запросы.
+
+**Пример формы добавления товара в корзину:**
+
+```html
+<form action="{{ cart_url }}" method="post">
+
+  <input type="hidden" name="variant_id" value="{{ product.variants.first.id }}" />
+
+  <input type="number" name="quantity" value="1" />
+
+  <button type="submit">Купить</button>
+
+</form>
+```
+
+**Пример AJAX-запроса для получения информации о товаре:**
+```js
+$.post('/products_by_id/62898073.json')
+  .done(function (product) {
+    console.log(product);
+  })
+```
+Для успешной разработки тем необходимо знать максимум возможностей API.
+
+Описание AJAX-запросов можно почитать на [liquidhub.ru](http://liquidhub.ru/collection/api-magazina).
+
+
+
+
